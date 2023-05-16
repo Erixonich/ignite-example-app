@@ -37,9 +37,7 @@ public class PersonDao {
     }
 
     public void updatePerson(Person person) {
-        if (cache.containsKey(person.getId())) {
-            cache.put(person.getId(), person);
-        }
+        cache.replace(person.getId(), person);
     }
 
     public boolean removePersonById(UUID id) {

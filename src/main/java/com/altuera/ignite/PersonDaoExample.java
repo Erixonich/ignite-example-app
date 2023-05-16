@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-public class PersonDao {
+public class PersonDaoExample {
     IgniteCache<UUID, Person> cache;
 
-    public PersonDao(IgniteCache<UUID, Person> cache) {
+    public PersonDaoExample(IgniteCache<UUID, Person> cache) {
         this.cache = cache;
     }
 

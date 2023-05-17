@@ -1,11 +1,13 @@
 package com.altuera.ignite;
 
+import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteException;
 import org.apache.ignite.cluster.ClusterNode;
 import org.apache.ignite.compute.ComputeJob;
 import org.apache.ignite.compute.ComputeJobAdapter;
 import org.apache.ignite.compute.ComputeJobResult;
 import org.apache.ignite.compute.ComputeTaskAdapter;
+import org.apache.ignite.resources.IgniteInstanceResource;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,6 +31,9 @@ public class PersonAverageAgeTask extends ComputeTaskAdapter<?,?> {
 
 
     public static class PersonAverageAgeJob extends ComputeJobAdapter {
+        @IgniteInstanceResource
+        private Ignite ign;
+
         @Override
         public Object execute() throws IgniteException {
             return null;
